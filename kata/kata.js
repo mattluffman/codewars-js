@@ -137,12 +137,38 @@ Test.assertEquals(even_or_odd(1), "Odd")
 
 /**
  * started: 12/6/19
+ * finished: 1/2/20
  * kata: https://www.codewars.com/kata/546e2562b03326a88e000020/train/javascript
- * solutions:
- * topics:
+ * solutions: https://www.codewars.com/kata/546e2562b03326a88e000020/solutions/javascript
+ * topics: bitwise operators?, parseInt(), toString(10)
  *
- * sources:
+ * sources: https://stackoverflow.com/questions/9914216/how-do-i-separate-an-integer-into-separate-digits-in-an-array-in-javascript
+ *
  */
+function squareDigits(num) {
+    //may the code be with you
+    if (isNaN(num)) {
+        throw new Error(num + " is not a number");
+    }
+
+    //split each digit into array
+    const digits = num.toString(10).split("").map(x => {
+        let parsedNum = parseInt(x);
+        return Math.pow(parsedNum, 2);
+    });
+    console.log(digits);
+
+    //join into string
+    const joined = digits.join("");
+
+    return parseInt(joined);
+}
+console.log(squareDigits(9119)); //811181
+console.log(squareDigits(9914)); //8181116
+//console.log(squareDigits("23456a"));
+/*
+Test.assertEquals(squareDigits(9119), 811181);
+*/
 
 /**
  * started: 12/6/19
