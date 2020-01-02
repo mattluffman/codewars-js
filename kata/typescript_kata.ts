@@ -148,3 +148,18 @@ export function descendingOrder(n: number): number {
 console.log(descendingOrder(21445)); // Output: 54421
 console.log(descendingOrder(145263)); // Output: 654321
 console.log(descendingOrder(123456789)); // Output: 987654321
+
+
+/**
+ * started: 1/2/20
+ * kata: https://www.codewars.com/kata/5526fc09a1bbd946250002dc/train/typescript
+ * solutions:
+ * topics:
+ *
+ * sources:
+ */
+export function findOutlier(integers: number[]): number {
+    // your code here
+}
+console.log(findOutlier([2, 4, 0, 100, 4, 11, 2602, 36])); //Should return: 11 (the only odd number)
+console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21])); //Should return: 160 (the only even number))
