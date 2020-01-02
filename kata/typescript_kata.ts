@@ -20,9 +20,9 @@ console.log(boolToWord(false));
  *
  * sources:
  */
-export function isIsogram(str: string) : boolean {
-    const splitChars = str.toLowerCase().split("");
-    const unique = new Set<string>(splitChars);
+export function isIsogram(str: string): boolean {
+    const splitChars: string[] = str.toLowerCase().split("");
+    const unique: Set<string> = new Set<string>(splitChars);
     console.log(`size => ${unique.size}`);
 
     return unique.size == str.length;
@@ -48,8 +48,7 @@ describe("example", function() {
     assert.equal( isIsogram("isIsogram"), false );
     assert.equal( isIsogram(""), true, "an empty string is a valid isogram" );
   });
-});
- */
+});  */
 
 
 /**
@@ -62,18 +61,18 @@ describe("example", function() {
  * https://codeburst.io/javascript-arrays-finding-the-minimum-maximum-sum-average-values-f02f1b0ce332
  *
  */
-export function sumArray(array:number[]) : number {
+export function sumArray(array: number[]): number {
     //check for empty
-    if (array == null || array.length == 0 || array.length == 1) {
+    if (array == null || array.length <= 1) {
         return 0;
     }
 
-    const min = Math.min(...array);
-    const max = Math.max(...array);
+    const min: number = Math.min(...array);
+    const max: number = Math.max(...array);
     console.log(`Min: ${min} Max: ${max}`);
 
     //get sum including min & max
-    const totalSum = array.reduce((accumulator, currentVal) => {
+    const totalSum: number = array.reduce((accumulator, currentVal) => {
         return accumulator + currentVal
     }, 0); //start with 0
     console.log(`sum: ${totalSum}`);
@@ -81,19 +80,71 @@ export function sumArray(array:number[]) : number {
     //return original sum minus min & max. Then you don't have to worry about duplicates & such
     return totalSum - max - min;
 }
-console.log(sumArray([ 6, 2, 1, 8, 10 ])); //16
-console.log(sumArray([ 6, 0, 1, 10, 10 ])); //17
+
+console.log(sumArray([6, 2, 1, 8, 10])); //16
+console.log(sumArray([6, 0, 1, 10, 10])); //17
 /*
 /// <reference path="/runner/typings/main/ambient/mocha/index.d.ts"/>
 /// <reference path="/runner/typings/main/ambient/chai/index.d.ts"/>
 import solution = require('./solution');
-
 import {assert} from "chai";
-
 describe("KataTest", function(){
   it("BasicTests", function(){
     assert.deepEqual(solution.sumArray([ 6, 2, 1, 8, 10 ]), 16);
     assert.deepEqual(solution.sumArray([ 6, 0, 1, 10, 10 ]), 17);
   });
-});
+});  */
+
+/**
+ * started: 1/2/20
+ * kata: https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/train/typescript
+ * solutions: https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/solutions/typescript
+ * topics: recursion, repeat (which doesn't work in this js version)
+ *
+ * sources: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
  */
+export function repeatStr(n: number, s: string): string {
+    if (n < 1) {
+        return '';
+    } else if (n == 1) {
+        return s;
+    } else {
+        return s + repeatStr(n - 1, s);
+    }
+}
+console.log(repeatStr(6, "I")); // "IIIIII"
+console.log(repeatStr(5, "Hello")); // "HelloHelloHelloHelloHello"
+/*
+/// <reference path="/runner/typings/mocha/index.d.ts" />
+/// <reference path="/runner/typings/chai/index.d.ts" />
+import solution = require('./solution');
+import {assert} from "chai";
+describe("solution", function(){
+  it("Tests", function(){
+    assert.equal(solution.repeatStr(3, "*"), "***");
+  });
+});  */
+
+/**
+ * started: 1/2/20
+ * kata: <a href="https://www.codewars.com/kata/5467e4d82edf8bbf40000155/train/typescript">https://www.codewars.com/kata/5467e4d82edf8bbf40000155/train/typescript</a>
+ * solutions: https://www.codewars.com/kata/5467e4d82edf8bbf40000155/solutions/typescript, https://www.codewars.com/kata/reviews/59b7958262a4af5d6c001c13/groups/5de49fd27368900001ecbd72
+ * topics: chaining, functional, split, map, sort, reverse, join
+ *
+ * sources: <a href="https://www.codewars.com/kata/reviews/5485f83ed8325edc730001c0/groups/57e57ff82827a683fa0022de">kata solutions for squareDigits()</a>
+ */
+export function descendingOrder(n: number): number {
+    const result = n.toString(10)
+        .split("")
+        .map(elem => {
+            return parseInt(elem);
+        })
+        .sort()
+        .reverse()
+        .join("");
+
+    return parseInt(result);
+}
+console.log(descendingOrder(21445)); // Output: 54421
+console.log(descendingOrder(145263)); // Output: 654321
+console.log(descendingOrder(123456789)); // Output: 987654321
