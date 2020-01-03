@@ -153,13 +153,37 @@ console.log(descendingOrder(123456789)); // Output: 987654321
 /**
  * started: 1/2/20
  * kata: https://www.codewars.com/kata/5526fc09a1bbd946250002dc/train/typescript
- * solutions:
- * topics:
+ * solutions: https://www.codewars.com/kata/5526fc09a1bbd946250002dc/solutions/typescript
+ * topics: array initialization
  *
  * sources:
  */
 export function findOutlier(integers: number[]): number {
-    // your code here
+    if (integers.length <= 2) {
+        throw new Error("must have at least 3 elements")
+    }
+
+    const odd: number[] = [],
+        even: number[] = [];
+
+    integers.forEach((item: number) => {
+        if (item % 2 == 0) {
+            even.push(item);
+        } else {
+            odd.push(item);
+        }
+    });
+
+    //test outliers
+    if (even.length > 1 && odd.length > 1) {
+        throw new Error("more than one outlier was provided");
+    }
+
+    if (odd.length == 1) {
+        return odd[0];
+    } else {
+        return even[0]
+    }
 }
 console.log(findOutlier([2, 4, 0, 100, 4, 11, 2602, 36])); //Should return: 11 (the only odd number)
 console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21])); //Should return: 160 (the only even number))
