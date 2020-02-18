@@ -187,3 +187,31 @@ export function findOutlier(integers: number[]): number {
 }
 console.log(findOutlier([2, 4, 0, 100, 4, 11, 2602, 36])); //Should return: 11 (the only odd number)
 console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21])); //Should return: 160 (the only even number))
+
+/**
+ * started: 2/18/20
+ * finished:
+ * kata: https://www.codewars.com/kata/52fba66badcd10859f00097e/train/typescript
+ * solutions:
+ * topics:
+ *
+ * sources: strings
+ */
+export class Kata {
+    static disemvowel(str: string) {
+        return str + ":-P";
+    }
+}
+console.log(Kata.disemvowel("This website is for losers LOL!"));
+/*
+/// <reference path="/runner/typings/mocha/index.d.ts" />
+/// <reference path="/runner/typings/chai/index.d.ts" />
+import solution = require('./solution');
+import {assert} from "chai";
+
+describe("disemvowel", function() {
+  it("should pass a sample test", function() {
+    assert.strictEqual(solution.Kata.disemvowel("This website is for losers LOL!"), "Ths wbst s fr lsrs LL!");
+  });
+});
+ */
