@@ -16,7 +16,7 @@ console.log(boolToWord(false));
  * finished: 1/2/20
  * kata: https://www.codewars.com/kata/54ba84be607a92aa900000f1/train/typescript
  * solutions: https://www.codewars.com/kata/54ba84be607a92aa900000f1/solutions/typescript
- * topics: Set
+ * topics: Set, split
  *
  * sources:
  */
@@ -190,16 +190,19 @@ console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21])); //Should return: 160 
 
 /**
  * started: 2/18/20
- * finished:
+ * finished: 5/28/20
  * kata: https://www.codewars.com/kata/52fba66badcd10859f00097e/train/typescript
- * solutions:
- * topics:
+ * solutions: https://www.codewars.com/kata/52fba66badcd10859f00097e/solutions/typescript
+ * topics: regex, replace
  *
- * sources: strings
+ * sources: https://medium.com/@cristina_9416/beginning-to-use-regex-in-javascript-4fa0d391b5c1
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
  */
 export class Kata {
+    static readonly vowelsRegex: RegExp = /[aeiou]/gi; // global, ignore case
+
     static disemvowel(str: string) {
-        return str + ":-P";
+        return str.replace(this.vowelsRegex, '');
     }
 }
 console.log(Kata.disemvowel("This website is for losers LOL!"));
