@@ -197,6 +197,9 @@ console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21])); //Should return: 160 
  *
  * sources: https://medium.com/@cristina_9416/beginning-to-use-regex-in-javascript-4fa0d391b5c1
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+ *
+ * solution to review: https://www.codewars.com/kata/reviews/59cf82b2c5c19968610002bf/groups/5ea6e6fb9de752000108c686
+ * https://www.codewars.com/kata/reviews/59cf82b2c5c19968610002bf/groups/5eb674de0f61730001f08750
  */
 export class Kata {
     static readonly vowelsRegex: RegExp = /[aeiou]/gi; // global, ignore case
