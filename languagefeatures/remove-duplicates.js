@@ -1,9 +1,3 @@
-/**
- * He're were trying to eliminate duplicate objects from an array based on just 1 value in the object.
- * So here we've got a fake list of customers ith banking products. We want only one instance of each customer id or number [u_di_number]
- */
-
-// 20 products, 19 unique customers
 const bankingProducts = [
     {
         sys_id: '0e019202dbc6d7406fa3ec51ca9619e3',
@@ -166,19 +160,23 @@ const bankingProducts = [
         'u_product.u_product_code': '4454'
     }];
 
+
+/**
+ * Here we're trying to eliminate duplicate objects from an array based on just 1 value in the object.
+ * We want only one instance of each customer id or number [u_di_number]
+ */
 console.log(`number of customer products in list:\n\t- ${bankingProducts.length}`);
-const uniqueCustomerNumbers = new Set(bankingProducts.map(bank => bank['account.u_di_number']));
+const uniqueCustomerNumbers = new Set(bankingProducts.map(bank => bank['account.u_di_number'])); // not in example page below but works
 console.log('unique customer numbers:\n\t- ' + [...uniqueCustomerNumbers].sort());
 console.log('number of unique customers:\n\t- ' + uniqueCustomerNumbers.size);
 
-// method #1 from https://firstclassjs.com/remove-duplicate-objects-from-javascript-array-how-to-performance-comparison/
+// method #3 from https://firstclassjs.com/remove-duplicate-objects-from-javascript-array-how-to-performance-comparison/
 console.log('---------------------------------------\nusing filter() & findIndex() methods\n---------------------------------------');
 
 let uniquieCustomers = bankingProducts.filter((product, index, self) => {
-    return index === self.findIndex((prd) => prd['account.u_di_number'] === product['account.u_di_number'])
+    return index === self.findIndex((prd) => prd['account.u_di_number'] === product['account.u_di_number']);
 });
 // remember that if you use {} in your lambda that you have to use return
 
-console.log(uniquieCustomers);
+// console.log(uniquieCustomers);
 console.log('unique customers: \n\t- ' + uniquieCustomers.length);
-
