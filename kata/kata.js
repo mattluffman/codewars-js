@@ -229,3 +229,41 @@ Test.describe("removeSmallest", function() {
   });
 });
  */
+
+/**
+ * started 5/23/26
+ * kata: https://www.codewars.com/kata/514b92a657cdc65150000006/train/javascript
+ * topics: math, algorithms
+ * modulus
+ * NOTE: I'm not using AI to solve this problem
+ *
+ * sources:
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
+ */
+function multiplesOf3Or5(number) {
+    // return 0 if number is negative
+    if (number < 0) {
+        return 0;
+    } else {
+        let sum = 0;
+        for (let i = number - 1; i > 0; --i) {
+            if (i % 3 === 0 || i % 5 === 0) {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+}
+
+function testMultiplesOf3Or5(n, expected) {
+    const actual = multiplesOf3Or5(n);
+    if (actual === expected) {
+        console.log(`PASS: n=${n}`);
+    } else {
+        console.log(`FAIL: n=${n} expected ${expected}, got ${actual}`);
+    }
+}
+
+console.log("basic tests");
+testMultiplesOf3Or5(10, 23);
+testMultiplesOf3Or5(55, 698);
