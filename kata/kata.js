@@ -255,15 +255,6 @@ function multiplesOf3Or5(number) {
     }
 }
 
-function testMultiplesOf3Or5(n, expected) {
-    const actual = multiplesOf3Or5(n);
-    if (actual === expected) {
-        console.log(`PASS: n=${n}`);
-    } else {
-        console.log(`FAIL: n=${n} expected ${expected}, got ${actual}`);
-    }
-}
-
-console.log("basic tests");
-testMultiplesOf3Or5(10, 23);
-testMultiplesOf3Or5(55, 698);
+module.exports = {
+    multiplesOf3Or5
+};
