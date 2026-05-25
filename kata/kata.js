@@ -99,18 +99,10 @@ console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 function boolToWord(bool){
     if (typeof bool !== "boolean") {
         const message = "Incorrect type passed";
-        console.log(message);
         throw new Error(message);
     }
     return bool ? "Yes" : "No";
 }
-console.log(boolToWord(true));
-console.log(boolToWord(false));
-//console.log(boolToWord(27));
-/*
-Test.assertEquals(boolToWord(true), 'Yes');
-Test.assertEquals(boolToWord(false), 'No');
-*/
 
 /**
  * started: 11/26/19
@@ -122,7 +114,7 @@ Test.assertEquals(boolToWord(false), 'No');
  * note: can also eliminate teh == 0 becaue non-zero ints evaluate to true
  */
 function evenOrOdd(number) {
-    return number % 2 == 0 ? "Even" : "Odd";
+    return number % 2 === 0 ? "Even" : "Odd";
 }
 
 /**
@@ -211,4 +203,5 @@ module.exports = {
     multiplesOf3Or5,
     squareDigits,
     evenOrOdd,
+    boolToWord,
 };
