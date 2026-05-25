@@ -17,14 +17,6 @@ function songDecoder(song) {
     return lessShittySong;
 }
 
-/* tests provided
-Test.assertEquals(songDecoder("AWUBBWUBC"), "A B C","WUB should be replaced by 1 space");
-Test.assertEquals(songDecoder("AWUBWUBWUBBWUBWUBWUBC"), "A B C","multiples WUB should be replaced by only 1 space");
-Test.assertEquals(songDecoder("WUBAWUBBWUBCWUB"), "A B C","heading or trailing spaces should be removed");
-*/
-
-console.log(songDecoder("AWUBWUBWUBBWUBWUBWUBC"));
-
 /**
  * 10/31/19
  * kata: https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/javascript
@@ -173,6 +165,7 @@ function multiplesOf3Or5(number) {
 }
 
 module.exports = {
+    songDecoder,
     removeSmallest,
     multiplesOf3Or5,
     squareDigits,
