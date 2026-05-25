@@ -17,14 +17,6 @@ function songDecoder(song) {
     return lessShittySong;
 }
 
-/* tests provided
-Test.assertEquals(songDecoder("AWUBBWUBC"), "A B C","WUB should be replaced by 1 space");
-Test.assertEquals(songDecoder("AWUBWUBWUBBWUBWUBWUBC"), "A B C","multiples WUB should be replaced by only 1 space");
-Test.assertEquals(songDecoder("WUBAWUBBWUBCWUB"), "A B C","heading or trailing spaces should be removed");
-*/
-
-console.log(songDecoder("AWUBWUBWUBBWUBWUBWUBC"));
-
 /**
  * 10/31/19
  * kata: https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/javascript
@@ -47,18 +39,6 @@ function accum(s) {
     return parts.join('-');
 }
 
-
-/*Test.describe("accum",function() {
-    Test.it("Basic tests",function() {
-        Test.assertEquals(accum("ZpglnRxqenU"), "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu");
-        Test.assertEquals(accum("NyffsGeyylB"), "N-Yy-Fff-Ffff-Sssss-Gggggg-Eeeeeee-Yyyyyyyy-Yyyyyyyyy-Llllllllll-Bbbbbbbbbbb");
-        Test.assertEquals(accum("MjtkuBovqrU"), "M-Jj-Ttt-Kkkk-Uuuuu-Bbbbbb-Ooooooo-Vvvvvvvv-Qqqqqqqqq-Rrrrrrrrrr-Uuuuuuuuuuu");
-        Test.assertEquals(accum("EvidjUnokmM"), "E-Vv-Iii-Dddd-Jjjjj-Uuuuuu-Nnnnnnn-Oooooooo-Kkkkkkkkk-Mmmmmmmmmm-Mmmmmmmmmmm");
-        Test.assertEquals(accum("HbideVbxncC"), "H-Bb-Iii-Dddd-Eeeee-Vvvvvv-Bbbbbbb-Xxxxxxxx-Nnnnnnnnn-Cccccccccc-Ccccccccccc");
-})})*/
-
-console.log(accum("EvidjUnokmM"));
-
 /**
  * 11/11/19
  * kata: https://www.codewars.com/kata/525f50e3b73515a6db000b83/train/javascript
@@ -68,24 +48,10 @@ console.log(accum("EvidjUnokmM"));
  * sources: https://stackoverflow.com/a/8358214
  * @param numbers
  */
-function createPhoneNumber(numbers){
+function createPhoneNumber(numbers) {
     let joined = numbers.join("");
-    let formatted = joined.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
-    return formatted;
+    return joined.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
 }
-
-/*
-  describe('Basic tests', () => {
-  Test.assertEquals(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]), "(123) 456-7890");
-  Test.assertEquals(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), "(111) 111-1111");
-  Test.assertEquals(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]), "(123) 456-7890");
-});
-*/
-
-console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
-console.log(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]));
-console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
-
 
 /**
  * started: 11/25/19
@@ -96,21 +62,13 @@ console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
  *
  * sources: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
  */
-function boolToWord(bool){
+function boolToWord(bool) {
     if (typeof bool !== "boolean") {
         const message = "Incorrect type passed";
-        console.log(message);
         throw new Error(message);
     }
     return bool ? "Yes" : "No";
 }
-console.log(boolToWord(true));
-console.log(boolToWord(false));
-//console.log(boolToWord(27));
-/*
-Test.assertEquals(boolToWord(true), 'Yes');
-Test.assertEquals(boolToWord(false), 'No');
-*/
 
 /**
  * started: 11/26/19
@@ -121,19 +79,9 @@ Test.assertEquals(boolToWord(false), 'No');
  *
  * note: can also eliminate teh == 0 becaue non-zero ints evaluate to true
  */
-function even_or_odd(number) {
-    return number % 2 == 0 ? "Even" : "Odd";
+function evenOrOdd(number) {
+    return number % 2 === 0 ? "Even" : "Odd";
 }
-console.log(even_or_odd(2));
-console.log(even_or_odd(0));
-console.log(even_or_odd(7));
-console.log(even_or_odd(1));
-/*
-Test.assertEquals(even_or_odd(2), "Even")
-Test.assertEquals(even_or_odd(0), "Even")
-Test.assertEquals(even_or_odd(7), "Odd")
-Test.assertEquals(even_or_odd(1), "Odd")
-*/
 
 /**
  * started: 12/6/19
@@ -156,19 +104,12 @@ function squareDigits(num) {
         let parsedNum = parseInt(x);
         return Math.pow(parsedNum, 2);
     });
-    console.log(digits);
 
     //join into string
     const joined = digits.join("");
 
     return parseInt(joined);
 }
-console.log(squareDigits(9119)); //811181
-console.log(squareDigits(9914)); //8181116
-//console.log(squareDigits("23456a"));
-/*
-Test.assertEquals(squareDigits(9119), 811181);
-*/
 
 /**
  * started: 12/6/19
@@ -184,7 +125,7 @@ Test.assertEquals(squareDigits(9119), 811181);
  */
 function removeSmallest(numbers) {
     if (!Array.isArray(numbers)) {
-        throw Error("parameter must be an array")
+        throw Error("parameter must be an array");
     }
 
     if (numbers.length === 0) {
@@ -197,38 +138,6 @@ function removeSmallest(numbers) {
     clone.splice(index, 1);
     return clone;
 }
-console.log(removeSmallest([1,2,3,4,5])); // = [2,3,4,5]
-console.log(removeSmallest([5,3,2,1,4])); // = [5,3,2,4]
-console.log(removeSmallest([2,2,1,2,1]));// = [2,2,2,1]
-/*
-Test.describe("removeSmallest", function() {
-  Test.it("works for the examples", function() {
-    Test.assertSimilar(removeSmallest([1, 2, 3, 4, 5]), [2, 3, 4, 5], "Wrong result for [1, 2, 3, 4, 5]");
-    Test.assertSimilar(removeSmallest([5, 3, 2, 1, 4]), [5, 3, 2, 4], "Wrong result for [5, 3, 2, 1, 4]");
-    Test.assertSimilar(removeSmallest([2, 2, 1, 2, 1]), [2, 2, 2, 1], "Wrong result for [2, 2, 1, 2, 1]");
-    Test.assertSimilar(removeSmallest([]), [], "Wrong result for []");
-  });
-
-  Test.it("returns [] if the list has only one element", function() {
-    for (let i = 0; i < 10; ++i) {
-      let x = ~~(Math.random() * 400);
-      Test.assertSimilar(removeSmallest([x]), [], `Wrong result for ${[x]}`);
-    }
-  });
-
-  function randomArray(length) {
-    return Array.from({length: length}, () => ~~(Math.random() * 400));
-  }
-
-  Test.it("returns a list that misses only one element", function() {
-    for(let i = 0; i < 10; ++i) {
-      let arr = randomArray(~~(Math.random() * 10) + 1);
-      let l = arr.length;
-      Test.assertSimilar(removeSmallest(arr).length, l - 1, `Wrong result for ${arr}`);
-    }
-  });
-});
- */
 
 /**
  * started 5/23/26
@@ -256,5 +165,12 @@ function multiplesOf3Or5(number) {
 }
 
 module.exports = {
-    multiplesOf3Or5
+    songDecoder,
+    removeSmallest,
+    multiplesOf3Or5,
+    squareDigits,
+    evenOrOdd,
+    boolToWord,
+    createPhoneNumber,
+    accum,
 };
