@@ -48,7 +48,7 @@ function accum(s) {
  * sources: https://stackoverflow.com/a/8358214
  * @param numbers
  */
-function createPhoneNumber(numbers){
+function createPhoneNumber(numbers) {
     let joined = numbers.join("");
     return joined.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
 }
@@ -62,7 +62,7 @@ function createPhoneNumber(numbers){
  *
  * sources: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
  */
-function boolToWord(bool){
+function boolToWord(bool) {
     if (typeof bool !== "boolean") {
         const message = "Incorrect type passed";
         throw new Error(message);
@@ -125,7 +125,7 @@ function squareDigits(num) {
  */
 function removeSmallest(numbers) {
     if (!Array.isArray(numbers)) {
-        throw Error("parameter must be an array")
+        throw Error("parameter must be an array");
     }
 
     if (numbers.length === 0) {
