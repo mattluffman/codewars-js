@@ -156,19 +156,12 @@ function squareDigits(num) {
         let parsedNum = parseInt(x);
         return Math.pow(parsedNum, 2);
     });
-    console.log(digits);
 
     //join into string
     const joined = digits.join("");
 
     return parseInt(joined);
 }
-console.log(squareDigits(9119)); //811181
-console.log(squareDigits(9914)); //8181116
-//console.log(squareDigits("23456a"));
-/*
-Test.assertEquals(squareDigits(9119), 811181);
-*/
 
 /**
  * started: 12/6/19
@@ -225,5 +218,6 @@ function multiplesOf3Or5(number) {
 
 module.exports = {
     removeSmallest,
-    multiplesOf3Or5
+    multiplesOf3Or5,
+    squareDigits,
 };
