@@ -121,19 +121,9 @@ Test.assertEquals(boolToWord(false), 'No');
  *
  * note: can also eliminate teh == 0 becaue non-zero ints evaluate to true
  */
-function even_or_odd(number) {
+function evenOrOdd(number) {
     return number % 2 == 0 ? "Even" : "Odd";
 }
-console.log(even_or_odd(2));
-console.log(even_or_odd(0));
-console.log(even_or_odd(7));
-console.log(even_or_odd(1));
-/*
-Test.assertEquals(even_or_odd(2), "Even")
-Test.assertEquals(even_or_odd(0), "Even")
-Test.assertEquals(even_or_odd(7), "Odd")
-Test.assertEquals(even_or_odd(1), "Odd")
-*/
 
 /**
  * started: 12/6/19
@@ -220,4 +210,5 @@ module.exports = {
     removeSmallest,
     multiplesOf3Or5,
     squareDigits,
+    evenOrOdd,
 };
