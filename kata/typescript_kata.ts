@@ -81,20 +81,6 @@ export function sumArray(array: number[]): number {
     return totalSum - max - min;
 }
 
-console.log(sumArray([6, 2, 1, 8, 10])); //16
-console.log(sumArray([6, 0, 1, 10, 10])); //17
-/*
-/// <reference path="/runner/typings/main/ambient/mocha/index.d.ts"/>
-/// <reference path="/runner/typings/main/ambient/chai/index.d.ts"/>
-import solution = require('./solution');
-import {assert} from "chai";
-describe("KataTest", function(){
-  it("BasicTests", function(){
-    assert.deepEqual(solution.sumArray([ 6, 2, 1, 8, 10 ]), 16);
-    assert.deepEqual(solution.sumArray([ 6, 0, 1, 10, 10 ]), 17);
-  });
-});  */
-
 /**
  * started: 1/2/20
  * kata: https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/train/typescript
