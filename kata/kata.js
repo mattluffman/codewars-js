@@ -164,6 +164,18 @@ function multiplesOf3Or5(number) {
     }
 }
 
+/**
+ * started: ?
+ * finished:
+ * kata: https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39/train/javascript
+ * topics: functional programming
+ *
+ * sources:
+ */
+// Note that this kata is many functions, and is implemented in ./larger-problems/js/calculating-with-functions.js
+
+
+
 module.exports = {
     songDecoder,
     removeSmallest,
