@@ -82,7 +82,7 @@ function calculate(firstOperand, operation, secondOperand) {
         case Operation.MULTIPLICATION:
             return firstOperand * secondOperand;
         case Operation.DIVISION:
-            return firstOperand / secondOperand;
+            return Math.trunc(firstOperand / secondOperand);
     }
 }
 

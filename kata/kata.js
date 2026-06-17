@@ -165,14 +165,14 @@ function multiplesOf3Or5(number) {
 }
 
 /**
- * started: ?
- * finished:
+ * started: unsure
+ * finished: 6/17/26
  * kata: https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39/train/javascript
- * topics: functional programming
+ * topics: functional programming, enum in javascript (Objects.freeze()), integer division, Math.trunc()
  *
- * sources:
+ * sources: https://www.geeksforgeeks.org/javascript/enums-in-javascript/
  */
-// Note that this kata is many functions, and is implemented in ./larger-problems/js/calculating-with-functions.js
+// Note that this kata is many functions. It is implemented in ./larger-problems/js/calculating-with-functions.js
 
 
 
