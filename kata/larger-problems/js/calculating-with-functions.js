@@ -1,41 +1,41 @@
 function zero(operation) {
-    return operation ? calculate(0, operation.operation, operation.rightOperand) : 0;
+    return calculateOperationIfExists(0, operation);
 }
 
 function one(operation) {
-    return operation ? calculate(1, operation.operation, operation.rightOperand) : 1;
+    return calculateOperationIfExists(1, operation);
 }
 
 function two(operation) {
-    return operation ? calculate(2, operation.operation, operation.rightOperand) : 2;
+    return calculateOperationIfExists(2, operation);
 }
 
 function three(operation) {
-    return operation ? calculate(3, operation.operation, operation.rightOperand) : 3;
+    return calculateOperationIfExists(3, operation);
 }
 
 function four(operation) {
-    return operation ? calculate(4, operation.operation, operation.rightOperand) : 4;
+    return calculateOperationIfExists(4, operation);
 }
 
 function five(operation) {
-    return operation ? calculate(5, operation.operation, operation.rightOperand) : 5;
+    return calculateOperationIfExists(5, operation);
 }
 
 function six(operation) {
-    return operation ? calculate(6, operation.operation, operation.rightOperand) : 6;
+    return calculateOperationIfExists(6, operation);
 }
 
 function seven(operation) {
-    return operation ? calculate(7, operation.operation, operation.rightOperand) : 7;
+    return calculateOperationIfExists(7, operation);
 }
 
 function eight(operation) {
-    return operation ? calculate(8, operation.operation, operation.rightOperand) : 8;
+    return calculateOperationIfExists(8, operation);
 }
 
 function nine(operation) {
-    return operation ? calculate(9, operation.operation, operation.rightOperand) : 9;
+    return calculateOperationIfExists(9, operation);
 }
 
 function plus(rightOperand) {
@@ -66,6 +66,9 @@ function dividedBy(rightOperand) {
     };
 }
 
+/**
+ * Operation enum
+ */
 const Operation = Object.freeze({
     SUBTRACTION: 0,
     ADDITION: 1,
@@ -73,6 +76,23 @@ const Operation = Object.freeze({
     DIVISION: 3
 });
 
+/**
+ * do the mathematical operation if the operation is provided, otherwise return the first operand.
+ * @param firstOperand the number for the given numerical named function caller
+ * @param operationInfo object with mathematical {@link Operation} & the right-hand operand
+ * @returns {number|*}
+ */
+function calculateOperationIfExists(firstOperand, operationInfo) {
+    return operationInfo ? calculate(firstOperand, operationInfo.operation, operationInfo.rightOperand) : firstOperand;
+}
+
+/**
+ * Calculate the result of the operation
+ * @param firstOperand - the first operand
+ * @param operation - the operation to perform
+ * @param secondOperand - the second operand
+ * @returns {number} - the result of the mathematical operation
+ */
 function calculate(firstOperand, operation, secondOperand) {
     switch (operation) {
         case Operation.ADDITION:
@@ -86,4 +106,4 @@ function calculate(firstOperand, operation, secondOperand) {
     }
 }
 
-module.exports =  { zero, one, two, three, four, five, six, seven, eight, nine, plus, minus, times, dividedBy };
+module.exports = {zero, one, two, three, four, five, six, seven, eight, nine, plus, minus, times, dividedBy};
