@@ -168,13 +168,36 @@ function multiplesOf3Or5(number) {
  * started: unsure
  * finished: 6/17/26
  * kata: https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39/train/javascript
+ * solutions: https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39/solutions/javascript
  * topics: functional programming, enum in javascript (Objects.freeze()), integer division, Math.trunc()
  *
  * sources: https://www.geeksforgeeks.org/javascript/enums-in-javascript/
  */
 // Note that this kata is many functions. It is implemented in ./larger-problems/js/calculating-with-functions.js
 
+/**
+ * started: 5/30/26
+ * kata: https://www.codewars.com/kata/51b62bf6a9c58071c600001b/train/javascript
+ * topics: algorithms
+ *
+ * sources: https://www.freecodecamp.org/news/how-to-convert-a-string-to-a-number-in-javascript/
+ */
+function romanNumeralEncoder(number) {
+    if (number < 1 || number > 3999) {
+        throw Error('input must be between 1 & 3999 inclusive');
+    }
+    // how to round down to the nearest 1000:
+    // Math.floor(1900 / 1000) * 1000; // Result: 1000
 
+    /*
+    function roundDownToNearest(num, magnitude) {
+      return Math.floor(num / magnitude) * magnitude;
+    }
+
+    roundDownToNearest(1900, 1000); // 1000
+    */
+    return "I";
+}
 
 module.exports = {
     songDecoder,
@@ -185,4 +208,5 @@ module.exports = {
     boolToWord,
     createPhoneNumber,
     accum,
+    romanNumeralEncoder
 };
