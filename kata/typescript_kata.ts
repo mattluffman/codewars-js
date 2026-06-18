@@ -7,10 +7,6 @@ export const boolToWord = (bool: boolean): string => {
     return bool ? "Yes" : "No";
 };
 
-console.log(boolToWord(true));
-console.log(boolToWord(false));
-
-
 /**
  * started: 1/2/20
  * finished: 1/2/20
@@ -27,29 +23,6 @@ export function isIsogram(str: string): boolean {
 
     return unique.size == str.length;
 }
-
-console.log(isIsogram("Dermatoglyphics")); //true        \
-console.log(isIsogram("aba")); //false
-console.log(isIsogram("moOse")); //false
-console.log(isIsogram("isIsogram")); //false
-console.log(isIsogram("")); //true
-console.log(isIsogram("isogram")); //true
-/*
-// See https://www.chaijs.com for how to use Chai.
-import { assert } from "chai";
-import { isIsogram } from "./solution";
-// TODO Add your tests here
-describe("example", function() {
-  it("test", function() {
-    assert.equal( isIsogram("Dermatoglyphics"), true );
-    assert.equal( isIsogram("isogram"), true );
-    assert.equal( isIsogram("aba"), false, "same chars may not be adjacent" );
-    assert.equal( isIsogram("moOse"), false, "same chars may not be same case" );
-    assert.equal( isIsogram("isIsogram"), false );
-    assert.equal( isIsogram(""), true, "an empty string is a valid isogram" );
-  });
-});  */
-
 
 /**
  * started: 1/2/20
@@ -98,18 +71,6 @@ export function repeatStr(n: number, s: string): string {
         return s + repeatStr(n - 1, s);
     }
 }
-console.log(repeatStr(6, "I")); // "IIIIII"
-console.log(repeatStr(5, "Hello")); // "HelloHelloHelloHelloHello"
-/*
-/// <reference path="/runner/typings/mocha/index.d.ts" />
-/// <reference path="/runner/typings/chai/index.d.ts" />
-import solution = require('./solution');
-import {assert} from "chai";
-describe("solution", function(){
-  it("Tests", function(){
-    assert.equal(solution.repeatStr(3, "*"), "***");
-  });
-});  */
 
 /**
  * started: 1/2/20
@@ -131,10 +92,6 @@ export function descendingOrder(n: number): number {
 
     return parseInt(result);
 }
-console.log(descendingOrder(21445)); // Output: 54421
-console.log(descendingOrder(145263)); // Output: 654321
-console.log(descendingOrder(123456789)); // Output: 987654321
-
 
 /**
  * started: 1/2/20
@@ -171,8 +128,6 @@ export function findOutlier(integers: number[]): number {
         return even[0]
     }
 }
-console.log(findOutlier([2, 4, 0, 100, 4, 11, 2602, 36])); //Should return: 11 (the only odd number)
-console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21])); //Should return: 160 (the only even number))
 
 /**
  * started: 2/18/20
@@ -194,16 +149,3 @@ export class Kata {
         return str.replace(this.vowelsRegex, '');
     }
 }
-console.log(Kata.disemvowel("This website is for losers LOL!"));
-/*
-/// <reference path="/runner/typings/mocha/index.d.ts" />
-/// <reference path="/runner/typings/chai/index.d.ts" />
-import solution = require('./solution');
-import {assert} from "chai";
-
-describe("disemvowel", function() {
-  it("should pass a sample test", function() {
-    assert.strictEqual(solution.Kata.disemvowel("This website is for losers LOL!"), "Ths wbst s fr lsrs LL!");
-  });
-});
- */
